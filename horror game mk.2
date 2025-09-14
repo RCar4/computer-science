@@ -142,8 +142,7 @@ def door_breathing():
     print_suspense("It begins to stir, its eyes glowing red. It growls low in its throat.")
     print_suspense("Suddenly, the creature breaks free from its chains and lunges at you!")
     print_suspense("You barely manage to dodge, but you're cornered now. There's no way out.")
-    print_suspense("GAME OVER! The creature catches you.")
-    return play_again()
+    return play_again_cornered()
 
 # Turning back path
 def turn_back():
@@ -184,7 +183,7 @@ def climb_tree():
     print_suspense("although the creature can't climb it and you are safe")
     print_suspense("the creature is very patient, and you will probably fall out of the tree when you go to sleep")
     print_suspense("you fell during the night and the creature caught you")
-    return play_again()
+    return play_again_falling_from_tree()
     
 # hotwire car path
 def hotwire_car():
@@ -252,7 +251,7 @@ def keep_driving():
 #continue on foot path
 def continue_on_foot():
     print_suspense("you choose to continue on foot")
-    print_suspense("you start hearing the creatures growling in the didstance")
+    print_suspense("you start hearing the creatures growling in the distance")
     print_suspense("it is catching up fast and you can't outrun him")
     print_suspense("you spot a cave nearby and you also see a wildfire watchtower")
     print_suspense("you have to make a choice fast")
@@ -264,6 +263,68 @@ def continue_on_foot():
     choice = input("Enter 1, 2: ")
     if choice == '1':
         return hide_in_cave()
+    elif choice == '2':
+        return hide_in_watchtower()
+        
+#hide in cave path
+def hide_in_cave():
+    print_suspense("you run towards the cave to try to hide from the creature")
+    print_suspense("when you get to the cave you try and find something to cover the entrance as best as you can")
+    print_suspense("you find a large rock and push it over the caves entrance")
+    print_suspense("the cave is dark and quiet and you cant see anything ahead of you")
+    print_suspense("you hear the creature outside searching for you but it is unable to find where you are at")
+    print_suspense("your safe for a while")
+    print_suspense("you wait in the cave for what seems like a month")
+    print_suspense("barely surviving off of bugs and the small amount of water that seeps through the tree roots above you")
+    print_suspense("it is starting to get very cold and winter seems to have started outside")
+    print_suspense("the change in season has made you realise that you have lost track of time")
+    print_suspense("you can just about hear that it is stormy outside through the slight gap in the boulder")
+    print_suspense("the wind starts picking up and is getting very strong")
+    print_suspense("you hear a crack from above you, and the cave collapses ontop of you")
+    return play_again_tree_ending()
+    
+# Play again function
+def play_again_cornered():
+    print_suspense("you died because of a room camper")
+    print_suspense("Would you like to play again?")
+    choice = input("Enter Y for yes or N for no: ")
+    if choice.lower() == 'y':
+        return start_game()
+    else:  
+        print_suspense("Thank you for playing! Goodbye.")
+    
+    
+# Play again fall asleep path function
+def play_again_falling_from_tree():
+    print_suspense("you died to falling onto the creature")
+    print_suspense("Would you like to play again?")
+    choice = input("Enter Y for yes or N for no: ")
+    if choice.lower() == 'y':
+        return start_game()
+    else:  
+        print_suspense("Thank you for playing! Goodbye.")    
+    
+# Play again police station path function
+def play_again_police_station():
+    print_suspense("you tried playing tag with the creature and lost")
+    print_suspense("Would you like to play again?")
+    choice = input("Enter Y for yes or N for no: ")
+    if choice.lower() == 'y':
+        return start_game()
+    else:  
+        print_suspense("Thank you for playing! Goodbye.")
+    
+
+#play again tree ending
+def play_again_tree_ending():
+    print_suspense("you died to a fallen tree")
+    print_suspense("Would you like to play again?")
+    choice = input("Enter Y for yes or N for no: ")
+    if choice.lower() == 'y':
+        return start_game()
+    else:  
+        print_suspense("Thank you for playing! Goodbye.")
+
 
 # Play again function
 def play_again():
@@ -281,3 +342,4 @@ def start_game():
 
 # Run the game
 start_game()
+
