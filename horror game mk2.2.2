@@ -1,0 +1,407 @@
+import time
+
+# Function to pause and simulate suspense
+def suspense_wait(seconds=0.5):
+    time.sleep(seconds)
+
+# Function to display a message with suspense effect
+def print_suspense(message, delay=2):
+    print(message)
+    suspense_wait(delay)
+
+# Introduction to the story
+def introduction():
+    print_suspense("You wake up in an unfamiliar room. Your head aches and you feel groggy.")
+    print_suspense("The room is dimly lit, and the air smells musty. There's a single door, but it seems locked.")
+    print_suspense("You hear a creaking sound behind you, but when you turn around, there's nothing there...")
+    print_suspense("It’s clear that you are trapped in this house, and you need to find a way out.")
+
+# First choice
+def first_choice():
+    print_suspense("What do you want to do?")
+    print("1. Try to open the door.")
+    print("2. Investigate the room.")
+
+    choice = input("Enter 1 or 2: ")
+    if choice == '1':
+        return open_door()
+    elif choice == '2':
+        return investigate_room()
+    else:
+        print_suspense("Invalid choice. Please choose again.")
+        return first_choice()
+
+# Opening the door path (locked, no escape yet)
+def open_door():
+    print_suspense("You rush to the door and try to open it. It's locked tightly, and you hear something scratching behind it.")
+    print_suspense("The door won't budge. You need to find a key or something to force it open.")
+    print_suspense("You realize you'll need to explore the house further to find a way out.")
+    return investigate_room()
+
+# Investigating the room path
+def investigate_room():
+    print_suspense("You decide to investigate the room. It's small and dusty, with an old dresser in the corner.")
+    print_suspense("You notice a cracked window, but it’s too high to reach. There’s also a desk with some papers scattered on it.")
+    print_suspense("There’s something strange about the dresser. You can’t put your finger on it, but it seems... important.")
+    
+    print("What will you do?")
+    print("1. Check the dresser.")
+    print("2. Inspect the desk.")
+    print("3. Look at the window.")
+    
+    choice = input("Enter 1, 2, or 3: ")
+    if choice == '1':
+        return check_dresser()
+    elif choice == '2':
+        return inspect_desk()
+    elif choice == '3':
+        return look_window()
+    else:
+        print_suspense("Invalid choice. Please choose again.")
+        return investigate_room()
+
+# Checking the dresser path
+def check_dresser():
+    print_suspense("You walk over to the dresser and open the top drawer.")
+    print_suspense("Inside, you find a small, rusty key and an old, yellowed note. The note reads:")
+    print_suspense("'The key to freedom lies in the basement.'")
+    print_suspense("You feel a chill as you read the note. The key must open something important.")
+    print_suspense("But you also hear something moving behind you... something close.")
+    return basement_door()
+
+# Inspecting the desk path
+def inspect_desk():
+    print_suspense("You walk over to the desk and examine the scattered papers.")
+    print_suspense("The papers are old and covered in dust, but one catches your eye. It's a map of the house!")
+    print_suspense("It marks several rooms, including a 'Basement' and a 'Front Door.' There's also a red X on the basement door.")
+    print_suspense("You feel the hairs on the back of your neck stand up. The map might hold the key to your escape.")
+    return basement_door()
+
+# Looking at the window path
+def look_window():
+    print_suspense("You approach the cracked window. It's too high to reach, but you can see the garden outside.")
+    print_suspense("The view is eerie, with fog rolling across the ground and strange figures moving in the distance.")
+    print_suspense("Suddenly, you hear a loud bang from behind you. A shadowy figure appears in the doorway!")
+    print_suspense("You must escape now!")
+    return basement_door()
+
+# Moving to the basement door
+def basement_door():
+    print_suspense("With the key in hand and the map in mind, you head towards the basement.")
+    print_suspense("The door is locked, but the key you found fits perfectly. You unlock it with a satisfying click.")
+    print_suspense("You step into the dark, musty basement, the air thick with mold and decay.")
+    print_suspense("The basement is full of old furniture, boxes, and cobwebs. But there’s something unsettling here... a presence.")
+    print_suspense("You hear footsteps from behind you. Someone—or something—is coming!")
+    
+    print("Do you want to:")
+    print("1. Explore the basement further.")
+    print("2. Run back upstairs.")
+    
+    choice = input("Enter 1 or 2: ")
+    if choice == '1':
+        return explore_basement()
+    elif choice == '2':
+        return run_upstairs()
+    else:
+        print_suspense("Invalid choice. Please choose again.")
+        return basement_door()
+
+# Exploring the basement path
+def explore_basement():
+    print_suspense("You move deeper into the basement, flashlight in hand.")
+    print_suspense("You find an old, rotting door at the far end of the room. The door creaks as you approach.")
+    print_suspense("There’s a faint sound from behind the door, like something... breathing.")
+    
+    print("Do you:")
+    print("1. Open the door.")
+    print("2. Turn back and look for another way out.")
+    print("3. run and break the basement hatch.")
+    
+    choice = input("Enter 1, 2, or 3: ")
+    if choice == '1':
+        return door_breathing()
+    elif choice == '2':
+        return turn_back()
+    elif choice == '3':
+        return break_hatch()
+    else:
+        print_suspense("Invalid choice. Please choose again.")
+        return explore_basement()
+
+# Running upstairs path
+def run_upstairs():
+    print_suspense("You sprint back upstairs, but as you reach the top, the door slams shut just as you reach the top, you realize the door is locked!")
+    print_suspense("The shadowy figure from earlier appears at the top of the stairs, blocking your escape.")
+    print_suspense("You have no choice but to face whatever’s down here in the basement.")
+    return explore_basement()
+
+# Opening the breathing door path
+def door_breathing():
+    print_suspense("You open the door, and the smell of decay fills your nostrils.")
+    print_suspense("In the room, you see a massive cage, and inside... a twisted creature, chained to the wall.")
+    print_suspense("It begins to stir, its eyes glowing red. It growls low in its throat.")
+    print_suspense("Suddenly, the creature breaks free from its chains and lunges at you!")
+    print_suspense("You barely manage to dodge, but you're cornered now. There's no way out.")
+    return play_again_cornered()
+
+# Turning back path
+def turn_back():
+    print_suspense("You decide to turn back and search for another way out.")
+    print_suspense("The footsteps behind you grow louder. Whatever it is, it’s getting closer!")
+    print_suspense("You need to escape, but you don’t know where to go.")
+    return play_again()
+    
+# breaking hatch path
+def break_hatch():
+    print_suspense("you decide to run over and break the basement hatch")
+    print_suspense("you kick the hatch several times hoping to get it to break open before the shadow figure gets you")
+    print_suspense("the door breaks open with a loud crash! you escape just as the hands of the creature reach out to grab you")
+    print_suspense("you narrowly escaped with your life but the creature is still chacing you.")
+    
+    print("do you:")
+    print("1. run for the police station")
+    print("2. climb a tree")
+    print("3. hotwire a car")
+    
+    choice = input("Enter 1, 2, 3: ")
+    if choice == '1':
+        return police_station()
+    elif choice == '2':
+          return climb_tree()
+    elif choice == '3':
+          return hotwire_car()
+
+# run to police station path
+def police_station():
+    print_suspense("you run to the police station")
+    print_suspense("the creature is faster than you, and you get caught")
+    return play_again()
+    
+# climb tree path
+def climb_tree():
+    print_suspense("you find a tree and decide to climb it")
+    print_suspense("although the creature can't climb it and you are safe")
+    print_suspense("the creature is very patient, and you will probably fall out of the tree when you go to sleep")
+    print_suspense("you fell during the night and the creature caught you")
+    return play_again_falling_from_tree()
+    
+# hotwire car path
+def hotwire_car():
+    print_suspense("you spot a car with its door open")
+    print_suspense("you hop in to find the car without the keys")
+    print_suspense("you cut the wires under the steering wheel and hotwire the car")
+    print_suspense("the car sparks to life, and you drive off")
+    print_suspense("you've gotten away for now but the creature has your scent and is still following")
+    print_suspense("you need to make a plan on how to get away from this creature but there is 3 places you can go")
+    
+    print("do you:")
+    print("1. drive to the mountains")
+    print("2. drive to the next town")
+    print("3. drive to the church")
+    
+    choice = input("Enter 1, 2, 3: ")
+    if choice == '1':
+        return to_mountains()
+    elif choice == '2':
+          return next_town()
+    elif choice == '3':
+          return to_church()
+
+#drive to the mountains path
+def to_mountains():
+    print_suspense("you chose to drive to the mountains")
+    print_suspense("the creature isn't in sight anymore")
+    print_suspense("but you know he is still following")
+    print_suspense("you realize the car is running low on gas, and need to refeul")
+    print_suspense("you pass a gas station further up the road")
+    
+    print("do you:")
+    print("1. stop to refeul")
+    print("2. keep driving")
+    
+    choice = input("Enter 1, 2: ")
+    if choice == '1':
+        return stop_station()
+    elif choice == '2':
+          return keep_driving()
+
+#stop at station path
+def stop_station():
+    print_suspense("you quickly stop at the petrol station")
+    print_suspense("but your mind keeps playing tricks on you, it keeps making you think the creature is waiting for you outside")
+    print_suspense("you double check the door and your mind is wrong")
+    print_suspense("you pay for your feul and keep driving")
+    print_suspense("you reach the mountains and find a house")
+    print_suspense("you run up to the house and bang on the door")
+    print_suspense("you hear footsteps coming to the door from the inside")
+    print_suspense("the door opens and an old man is on the other side")
+    print_suspense("the old man wants to know what you want")
+    print_suspense("you tell him about the creature and he welcomes you in")
+    print_suspense("the man is quiet and doesn't say much")
+    print_suspense("he tells you to sit in the livingroom")
+    print_suspense("you ask him wheather he knows anything about the creature")
+    print_suspense("the old man says, there was a creature that roamed this area for years back in the 1930s called the stealer")
+    print_suspense("they said if you saw him you would dissapear. about 58 people whent missing during the time of it being around")
+    print_suspense("then one day some men in suits who said they were the government came and caught him and took it away")
+    print_suspense("nobody saw it again")
+    print_suspense("the man says, if you are telling the truth then the stealer is back and has come to finnish what he started and you are his target that got away")
+    print_suspense("you ask if there is a way to stop the stealer, and the man said he knew a way")
+    print_suspense("the man said, back when it first started
+
+#keep driving path
+def keep_driving():
+    print_suspense("you choose to keep driving and pass the feul station")
+    print_suspense("after a while the car grinds to a halt just before the mountains")
+    print_suspense("your left stranded miles away from any help")
+    
+    print("do you:")
+    print("1. get out of car and continue on foot")
+    print("2. stay in car")
+    
+    choice = input("Enter 1, 2, 3: ")
+    if choice == '1':
+        return continue_on_foot()
+    elif choice == '2':
+          return stay_in_car()
+          
+#continue on foot path
+def continue_on_foot():
+    print_suspense("you choose to continue on foot")
+    print_suspense("you start hearing the creatures growling in the distance")
+    print_suspense("it is catching up fast and you can't outrun him")
+    print_suspense("you spot a cave nearby and you also see a wildfire watchtower")
+    print_suspense("you have to make a choice fast")
+    
+    print("do you")
+    print("1. hide in cave")
+    print("2. hide in watchtower")
+    
+    choice = input("Enter 1, 2: ")
+    if choice == '1':
+        return hide_in_cave()
+    elif choice == '2':
+        return hide_in_watchtower()
+        
+#hide in cave path
+def hide_in_cave():
+    print_suspense("you run towards the cave to try to hide from the creature")
+    print_suspense("when you get to the cave you try and find something to cover the entrance as best as you can")
+    print_suspense("you find a large rock and push it over the caves entrance")
+    print_suspense("the cave is dark and quiet and you cant see anything ahead of you")
+    print_suspense("you hear the creature outside searching for you but it is unable to find where you are at")
+    print_suspense("your safe for a while")
+    print_suspense("you wait in the cave for what seems like a month")
+    print_suspense("barely surviving off of bugs and the small amount of water that seeps through the tree roots above you")
+    print_suspense("it is starting to get very cold and winter seems to have started outside")
+    print_suspense("the change in season has made you realise that you have lost track of time")
+    print_suspense("you can just about hear that it is stormy outside through the slight gap in the boulder")
+    print_suspense("the wind starts picking up and is getting very strong")
+    print_suspense("you hear a crack from above you, and the cave collapses ontop of you")
+    return play_again_tree_ending()
+    
+    
+#hide in watchtower path
+def hide_in_watchtower():
+    print_suspense("you choose to hide in the watchtower")
+    print_suspense("the floorboards on the steps up creak as you climb them")
+    print_suspense("you see movement in the distance")
+    print_suspense("the creature is moving towards you. You run up the stairs and turn the door handle")
+    print_suspense("the door creaks open and you enter the room.")
+    print_suspense("the room is covered in a layer of dust and looks like it hasn't been used in years")
+    print_suspense("you hear the creature climbing the stairs, you have to find a place to hide")
+    print_suspense("you look around and spot a table, and a wardrobe")
+    print("where do you hide")
+    print("1. under the table")
+    print("2. in the wardrobe")
+    
+    choice = input("enter 1, 2: ")
+    if choice == '1':
+        return under_table()
+    elif choice == '2':
+        return in_wardrobe()
+    else:
+        print("invalid choice try again")
+        return hide_in_watchtower()
+
+#hide under table path
+def under_table():
+    print_suspense("you choose to hide under the table")
+    print_suspense("you see the creature walk up to the open door and walk in")
+    print_suspense("the creature spots you under the table")
+    return under_table_ending()
+
+#hide in wardrobe path
+def in_wardrobe():
+    print_suspense("you hide in the wardrobe")
+    print_suspense("you can barely see out through the gap in the doors")
+    print_suspense("the creature gives up and leaves")
+
+# Play again function
+def under_table_ending():
+    print_suspense("you hid in plain sight")
+    print_suspense("Would you like to play again?")
+    choice = input("Enter Y for yes or N for no: ")
+    if choice.lower() == 'y':
+        return start_game()
+    else:  
+        print_suspense("Thank you for playing! Goodbye.")
+
+# Play again function
+def play_again_cornered():
+    print_suspense("you died because of a room camper")
+    print_suspense("Would you like to play again?")
+    choice = input("Enter Y for yes or N for no: ")
+    if choice.lower() == 'y':
+        return start_game()
+    else:  
+        print_suspense("Thank you for playing! Goodbye.")
+    
+    
+# Play again fall asleep path function
+def play_again_falling_from_tree():
+    print_suspense("you died to falling onto the creature")
+    print_suspense("Would you like to play again?")
+    choice = input("Enter Y for yes or N for no: ")
+    if choice.lower() == 'y':
+        return start_game()
+    else:  
+        print_suspense("Thank you for playing! Goodbye.")    
+    
+# Play again police station path function
+def play_again_police_station():
+    print_suspense("you tried playing tag with the creature and lost")
+    print_suspense("Would you like to play again?")
+    choice = input("Enter Y for yes or N for no: ")
+    if choice.lower() == 'y':
+        return start_game()
+    else:  
+        print_suspense("Thank you for playing! Goodbye.")
+    
+
+#play again tree ending
+def play_again_tree_ending():
+    print_suspense("you died to a fallen tree")
+    print_suspense("Would you like to play again?")
+    choice = input("Enter Y for yes or N for no: ")
+    if choice.lower() == 'y':
+        return start_game()
+    else:  
+        print_suspense("Thank you for playing! Goodbye.")
+
+
+# Play again function
+def play_again():
+    print_suspense("Would you like to play again?")
+    choice = input("Enter Y for yes or N for no: ")
+    if choice.lower() == 'y':
+        return start_game()
+    else:  
+        print_suspense("Thank you for playing! Goodbye.")
+
+# Starting the game
+def start_game():
+    introduction()
+    first_choice()
+
+# Run the game
+start_game()
