@@ -1,0 +1,10 @@
+length = int(input("what is the length of one side of your square? "))
+import turtle
+        
+def square(length):
+    for counter in range(4):
+        turtle.forward(length)
+        turtle.left(90)
+
+square(length)
+turtle.done()
