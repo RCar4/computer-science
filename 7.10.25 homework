@@ -1,0 +1,16 @@
+text = 'beans on toast hd'
+
+#.replace used to replace parts of code with other parts
+print(text.replace('h', 'o').replace('d', 'k').replace(' ', '_'))
+
+#.islower used to check if all the line is lower case letters
+print(text.islower())
+
+#.isupper used to check if all the line is upper case letters
+print(text.isupper())
+
+#.isalpha used to check if all the line is alphabetical letters
+print(text.isalpha())
+
+#.isdigit used to check if all the line is numerical digits
+print(text.isdigit())
