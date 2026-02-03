@@ -1,0 +1,83 @@
+# #001
+# name = input("enter your first name: ")
+# print("hello " + (name))
+# 
+# #002
+# first_name = input("enter your first name: ")
+# surname = input("enter your surname: ")
+# print("hello " + (first_name)+ " " +(surname))
+# 
+# #003
+# print("what do you call a bear with no gumms \nA gummy bear")
+# 
+# #004
+# num1 = int(input("enter a number: "))
+# num2 = int(input("enter a second number: "))
+# answer = num1 + num2
+# print("the total is", (answer))
+# 
+# #005
+# num1 = int(input("enter a number: "))
+# num2 = int(input("enter a second number: "))
+# num3 = int(input("enter a third number: "))
+# answer1 = num1 + num2
+# answer2 = answer1 / num3
+# print("the total is", (answer2))
+# 
+# #006
+# num1 = int(input("how many peices of pizza did you start with: "))
+# num2 = int(input("enter how many slices you ate: "))
+# answer = num1 - num2
+# print("the remaining amount is", (answer))
+# 
+# #007
+# name543 = input("enter your first name: ")
+# num1 = int(input("enter your age: "))
+# num2 = int(1)
+# answer = num1 + num2
+# print((name543), "your next birthday you will be:", (answer))
+# 
+# #008
+# num1 = int(input("enter total of the bill: "))
+# num2 = int(input("enter amount of diners: "))
+# answer = num1 / num2
+# print("the split bill is", (answer), " per person")
+# 
+# #009
+# d = int(input("how many days: "))
+# h = int(24)
+# h1 = d*h
+# print("hours:", h1)
+# m = int(60)
+# m1 = h1*m
+# print("minutes:", m1)
+# s = int(60)
+# s1 = m1*s
+# print("seconds:", s1)
+# ms = int(100)
+# ms1 = s1*ms
+# print("milliseconds:", ms1)
+# 
+# #010
+# kilograms = float(input("enter amount in kilograms: "))
+# pounds = float(2.204)
+# weight = kilograms*pounds
+# print(weight)
+
+#011
+def numbers():
+    num11 = float(input("enter a number above 100: "))
+    num22 = float(input("enter a number below 10: "))
+    answer = num11/num22
+    print(answer)
+    
+    if num22 > 10:
+        print("BELOW 10")
+        return numbers()
+    
+    if num11 < 100:
+        print("ABOVE 100")
+        return numbers()
+        
+
+numbers()
